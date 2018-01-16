@@ -2,6 +2,6 @@
 
 Attempting a number guess game.
 
-[//]: # # links to refer
+[//]: # (# links to refer)
 
-[//]: # Grid of numbers : https://gridbyexample.com/examples/
+[//]: # (Grid of numbers : https://gridbyexample.com/examples/)
