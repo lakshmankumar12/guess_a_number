@@ -19,6 +19,8 @@ var resultValDom = document.getElementById('result_val');
 var numGridDom = document.getElementById('number_grid');
 var guessTextDom = document.getElementById('guess_text');
 var maxValDisplayDom = document.getElementById('max_val_display');
+var soFarDisplayDom = document.getElementById('so_far_answered');
+var soFarDisplayValuesDom = document.getElementById('so_far_values');
 
 var maxVal;
 var gameProgress;
@@ -80,6 +82,8 @@ function yes_answer() {
         return;
     }
     finalVal += currentIter;
+    soFarDisplayValuesDom.textContent += 'yes, ';
+    soFarDisplayDom.style.display = 'block';
     nextIter();
 }
 
@@ -87,10 +91,13 @@ function no_answer() {
     if (!gameProgress) {
         return;
     }
+    soFarDisplayValuesDom.textContent += 'no, ';
+    soFarDisplayDom.style.display = 'block';
     nextIter();
 }
 
 function finishGame() {
+    soFarDisplayDom.style.display = "none";
     numGridDom.style.display = "none";
     resultValDom.textContent = finalVal.toString();
     resultAnnounceDom.style.display = "block";
@@ -113,6 +120,8 @@ function nextIter() {
 function startGame() {
     startButtonDom.style.display = "none";
     guessTextDom.style.display = "none";
+    soFarDisplayDom.style.display = "none";
+    soFarDisplayValuesDom.textContent = '';
     gameProgress = 1;
     currentIter = 0;
     finalVal = 0;
