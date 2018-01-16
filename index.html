@@ -1,0 +1,70 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <title>Guess Game</title>
+        <style>
+            body {
+              margin: 40px;
+            }
+            .wrapper {
+              display: grid;
+              grid-template-columns: 80px 80px 80px 80px 80px;
+              grid-gap: 10px;
+              background-color: #fff;
+              color: #444;
+              padding: 20px;
+            }
+            .box {
+              background-color: #444;
+              color: #fff;
+              border-radius: 5px;
+              padding: 20px;
+              font-size: 120%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="panel" "panel-heading">
+                <h1>Number Guess Game</h1>
+            </div>
+            <div class="row">
+                <label for="max_number">Max number</label>
+                <input type="number" min="20" max="100" id="max_number" value="100"/>
+            </div>
+            <div class="row" id="guess_text">
+                <span class="text">Guess a number from 1 to <span id="max_val_display"></span></span>
+            </div>
+            <div class="row">
+                <button class="btn btn-default" id="start_btn">Click Once Guessed</button>
+                <button class="btn btn-default" id="restart_btn">Restart</button>
+            </div>
+            <div id="number_grid">
+                <div class="row">
+                    Is your Number in this list?
+                    <button class="btn btn-default" id="present_btn">Yes</button>
+                    <button class="btn btn-default" id="absent_btn">No</button>
+                </div>
+                <div class="row" id="wrapper_parent">
+                    <!--<div class="box a">A</div>-->
+                    <!--<div class="box b">B</div>-->
+                    <!--<div class="box c">C</div>-->
+                    <!--<div class="box d">D</div>-->
+                    <!--<div class="box e">E</div>-->
+                    <!--<div class="box f">F</div>-->
+                </div>
+            </div>
+            <div id="result_announce">
+                <div class="row">
+                    Your number is <span id="result_val"></span>. How cool is that!
+                </div>
+                <div class="row">
+                    Click Restart to start again!
+                </div>
+            </div>
+        <script src="guess_game.js"></script>
+    </body>
+</html>
